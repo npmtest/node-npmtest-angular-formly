@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-angular-formly/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-angular-formly/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-angular-formly/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-angular-formly/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-angular-formly/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-angular-formly/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-angular-formly/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-angular-formly/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-angular-formly/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-angular-formly/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-angular-formly/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-angular-formly/build/coverage.html/index.html)
 
@@ -35,47 +35,11 @@
 ```json
 
 {
-    "name": "angular-formly",
-    "version": "8.4.1",
-    "author": "Astrism <astrisms@gmail.com>",
-    "contributors": [
-        "Astrism <astrisms@gmail.com>",
-        "Kent C. Dodds <kent@doddsfamily.us>"
-    ],
-    "homepage": "http://formly-js.github.io/angular-formly/",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/formly-js/angular-formly.git"
+    "author": {
+        "name": "Astrism"
     },
-    "keywords": [
-        "angular",
-        "forms",
-        "angular-formly",
-        "formly",
-        "angularjs",
-        "angular forms",
-        "json forms",
-        "form library"
-    ],
-    "main": "dist/formly.js",
-    "license": "MIT",
-    "scripts": {
-        "build:dist": "webpack --progress --colors --set-env-NODE_ENV=development",
-        "build:prod": "webpack --progress --colors --set-env-NODE_ENV=production",
-        "build": "npm run build:dist & npm run build:prod",
-        "eslint:test": "eslint -c other/test.eslintrc --ignore-pattern **/*.{test,mock}.js src/",
-        "eslint:src": "eslint -c other/src.eslintrc --ignore-pattern !**/*.{test,mock}.js src/",
-        "eslint": "npm run eslint:test -s && npm run eslint:src -s",
-        "test": "karma start --single-run --set-env-COVERAGE=true --set-env-NODE_ENV=test",
-        "test:watch": "karma start --set-env-COVERAGE=true --set-env-NODE_ENV=test",
-        "test:debug": "karma start --browsers Chrome --set-env-NODE_ENV=test",
-        "start": "npm run test:watch",
-        "check-coverage": "istanbul check-coverage --statements 93 --branches 89 --functions 92 --lines 92",
-        "report-coverage": "cat ./coverage/lcov.info | node_modules/.bin/codecov",
-        "commit": "git-cz",
-        "publish-latest": "publish-latest --user-email kent+formly-bot@doddsfamily.us --user-name formly-bot",
-        "meteor": "gulp meteor",
-        "semantic-release": "semantic-release pre && npm run build && npm run meteor && npm publish && npm run publish-latest && semantic-release post"
+    "bugs": {
+        "url": "https://github.com/formly-js/angular-formly/issues"
     },
     "config": {
         "ghooks": {
@@ -85,11 +49,16 @@
             "path": "node_modules/cz-conventional-changelog"
         }
     },
+    "contributors": [
+        {
+            "name": "Astrism"
+        },
+        {
+            "name": "Kent C. Dodds"
+        }
+    ],
+    "dependencies": {},
     "description": "AngularJS directive which takes JSON representing a form and renders to HTML",
-    "peerDependencies": {
-        "angular": "^1.2.x || >= 1.4.0-beta.0 || >= 1.5.0-beta.0",
-        "api-check": "^7.0.0"
-    },
     "devDependencies": {
         "angular": "1.5.0",
         "angular-mocks": "1.5.0",
@@ -140,10 +109,43 @@
         "webpack": "1.12.14",
         "webpack-notifier": "1.3.0"
     },
+    "directories": {},
+    "dist": {
+        "shasum": "5f89c8a1bef42ba0139f3a8a0d5b2c93713601af",
+        "tarball": "https://registry.npmjs.org/angular-formly/-/angular-formly-8.4.1.tgz"
+    },
+    "gitHead": "42b47c6ae0c5cdafca2696ffa27080e239431298",
+    "homepage": "http://formly-js.github.io/angular-formly/",
     "jspm": {
         "peerDependencies": {
             "angular": "*"
         }
+    },
+    "keywords": [
+        "angular",
+        "forms",
+        "angular-formly",
+        "formly",
+        "angularjs",
+        "angular forms",
+        "json forms",
+        "form library"
+    ],
+    "license": "MIT",
+    "main": "dist/formly.js",
+    "maintainers": [
+        {
+            "name": "astrism"
+        },
+        {
+            "name": "kentcdodds"
+        }
+    ],
+    "name": "angular-formly",
+    "optionalDependencies": {},
+    "peerDependencies": {
+        "angular": "^1.2.x || >= 1.4.0-beta.0 || >= 1.5.0-beta.0",
+        "api-check": "^7.0.0"
     },
     "release": {
         "verfiyRelease": {
@@ -155,6 +157,29 @@
             "silent": false
         }
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/formly-js/angular-formly.git"
+    },
+    "scripts": {
+        "build": "npm run build:dist & npm run build:prod",
+        "build:dist": "webpack --progress --colors --set-env-NODE_ENV=development",
+        "build:prod": "webpack --progress --colors --set-env-NODE_ENV=production",
+        "check-coverage": "istanbul check-coverage --statements 93 --branches 89 --functions 92 --lines 92",
+        "commit": "git-cz",
+        "eslint": "npm run eslint:test -s && npm run eslint:src -s",
+        "eslint:src": "eslint -c other/src.eslintrc --ignore-pattern !**/*.{test,mock}.js src/",
+        "eslint:test": "eslint -c other/test.eslintrc --ignore-pattern **/*.{test,mock}.js src/",
+        "meteor": "gulp meteor",
+        "publish-latest": "publish-latest --user-email kent+formly-bot@doddsfamily.us --user-name formly-bot",
+        "report-coverage": "cat ./coverage/lcov.info | node_modules/.bin/codecov",
+        "semantic-release": "semantic-release pre && npm run build && npm run meteor && npm publish && npm run publish-latest && semantic-release post",
+        "start": "npm run test:watch",
+        "test": "karma start --single-run --set-env-COVERAGE=true --set-env-NODE_ENV=test",
+        "test:debug": "karma start --browsers Chrome --set-env-NODE_ENV=test",
+        "test:watch": "karma start --set-env-COVERAGE=true --set-env-NODE_ENV=test"
+    },
+    "version": "8.4.1",
     "bin": {}
 }
 ```
